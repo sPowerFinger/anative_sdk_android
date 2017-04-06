@@ -1,44 +1,25 @@
 package com.project.personal.csc.myapplication;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Spinner;
 
 import java.util.HashMap;
 import java.util.Map;
 
 import nativesdk.ad.adsdk.AdSdk;
 import nativesdk.ad.adsdk.app.Constants;
-import nativesdk.ad.adsdk.common.utils.L;
 
 
-public class MainActivity extends ActionBarActivity implements AdapterView.OnItemSelectedListener {
+public class MainActivity extends ActionBarActivity {
 
     private final String MARKET_TEST_FB_ID = "1713507248906238_1787756514814644";
     private final String MARKTE_TEST_ADMOB_ID = "ca-app-pub-6857009064962881/7734086652";
     private final String MARKTE_TEST_VK_ID = "61035";
-    private final String MARKET_TEST_SOURD_ID = randomSourceId();
     private Map<String, Integer> marketStyle = new HashMap<>();
-    private Spinner coutSpinner;
-    private ArrayAdapter<CharSequence> countryAdapter;
-    private String[] countries = {"AE","AF", "AL", "AM", "AO", "AR", "AT", "AU", "AZ", "BD", "BE", "BF",
-            "BG", "BH", "BI", "BJ", "BL", "BN", "BO", "BR", "BW", "BY", "CA", "CF", "CG", "CH", "CL", "CM",
-            "CN", "CO", "CR", "CS", "CU", "CY", "CN", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "ET",
-            "FI", "FJ", "FR", "GB", "GD", "GE", "GH", "GN", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IL",
-            "IN", "IQ", "IR", "IS", "IT", "JM", "JO", "JP", "KG", "KH", "KP", "KR", "KT", "KW", "KZ", "LA",
-            "LB", "LC", "LI", "LK", "LR", "LT", "LU", "LV", "LY", "MA", "MC", "MD", "MG", "ML", "MM", "MN",
-            "MO", "MT", "MU", "MW", "MX", "MY", "MZ", "NA", "NE", "NG", "NI", "NL", "NO", "NP", "NZ", "OM",
-            "PA", "PE", "PG", "PH", "PK", "PL", "PT", "PY", "QA", "RO", "RU", "SA", "SC", "SD", "SE", "SG",
-            "SI", "SK", "SM", "SN", "SO", "SY", "SZ", "TD", "TG", "TH", "TJ", "TM", "TN","TR", "TW", "TZ",
-            "UA", "UG", "US", "UY", "UZ", "VC", "VE", "VN", "YE", "YU", "ZA", "ZM", "ZR", "ZW"};
-
 
     @Override
     protected void onResume() {
@@ -54,9 +35,28 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        AdSdk.initialize(this, MARKET_TEST_SOURD_ID); // 也可以在Application 里面初始化
+
         setMarketStyle();  // 若不设置，采取默认样式
 
+        findViewById(R.id.market).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                AdSdk.enableFacebookAdInMarket(MainActivity.this, MARKET_TEST_FB_ID);   // FB, 不需要不设
+//                AdSdk.enableAdmobInMarket(MainActivity.this, MARKTE_TEST_ADMOB_ID);     // Admob，不需要不设
+//                AdSdk.enableVkInMarket(MainActivity.this, MARKTE_TEST_VK_ID);           // VK，不需要不设
+                AdSdk.showAppMarket(MainActivity.this);
+            }
+        });
+        findViewById(R.id.market_fragmet).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                AdSdk.enableFacebookAdInMarket(MainActivity.this, MARKET_TEST_FB_ID);
+//                AdSdk.enableAdmobInMarket(MainActivity.this, MARKTE_TEST_ADMOB_ID);
+                AdSdk.setAppMarketFragmentMode(MainActivity.this, true);
+                Intent i = new Intent(MainActivity.this, ViewpagerActivity.class);
+                startActivity(i);
+            }
+        });
 
         findViewById(R.id.news).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,73 +80,6 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
                 AdSdk.showNewsFeed(MainActivity.this,false);
             }
         });
-
-        findViewById(R.id.market).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                AdSdk.enableFacebookAdInMarket(MainActivity.this, MARKET_TEST_FB_ID);   // FB, 不需要不设
-                AdSdk.enableAdmobInMarket(MainActivity.this, MARKTE_TEST_ADMOB_ID);     // Admob，不需要不设
-                AdSdk.enableVkInMarket(MainActivity.this, MARKTE_TEST_VK_ID);           // VK，不需要不设
-                AdSdk.showAppMarket(MainActivity.this);
-            }
-        });
-        findViewById(R.id.market_fragmet).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                AdSdk.enableFacebookAdInMarket(MainActivity.this, MARKET_TEST_FB_ID);
-                AdSdk.enableAdmobInMarket(MainActivity.this, MARKTE_TEST_ADMOB_ID);
-                AdSdk.setAppMarketFragmentMode(MainActivity.this, true);
-                Intent i = new Intent(MainActivity.this, ViewpagerActivity.class);
-                startActivity(i);
-            }
-        });
-
-        // country spinner
-        coutSpinner = (Spinner) findViewById(R.id.countries);
-        coutSpinner.setVisibility(View.GONE);
-        countryAdapter = ArrayAdapter.createFromResource(this, R.array.countries, android.R.layout.simple_spinner_item);
-        countryAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        coutSpinner.setAdapter(countryAdapter);
-        coutSpinner.setOnItemSelectedListener(this);
-        SharedPreferences sp = getSharedPreferences("country", MODE_PRIVATE);
-        String ct = sp.getString("country", "US");
-        int position = getIndex(countries, ct);
-        if (position >= 0) {
-            coutSpinner.setSelection(position);
-        }
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
-    private String randomSourceId() {
-        int random = (int) (Math.random() * 100);
-        int i = random % 2;
-        if (i == 0) {
-            return "25173";
-        } else if (i == 1) {
-            return "18001";
-        }
-        return "25173";
     }
 
     /*
@@ -196,21 +129,24 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
     }
 
     @Override
-    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        SharedPreferences sp = getSharedPreferences("country", MODE_PRIVATE);
-        sp.edit().putString("country", countries[position]).apply();
-        L.e("set country: " + countries[position]);
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
     }
 
     @Override
-    public void onNothingSelected(AdapterView<?> parent) {}
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
 
-    private int getIndex(String[] arr, String item) {
-        for (int i = 0; i < arr.length; i++) {
-            if (countries[i].equals(item)) {
-                return i;
-            }
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            return true;
         }
-        return -1;
+
+        return super.onOptionsItemSelected(item);
     }
 }
