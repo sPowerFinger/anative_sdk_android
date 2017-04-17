@@ -14,6 +14,6 @@ public class MyApplication extends Application {
     public void onCreate() {
         super.onCreate();
 
-        AdSdk.initialize(this, "18001");
+        AdSdk.initialize(this, "27722");
     }
 }
