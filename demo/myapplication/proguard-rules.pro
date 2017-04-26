@@ -16,25 +16,26 @@
 #   public *;
 #}
 
-#FB 若没添加相关库，可不添加
--keep class com.facebook.** {*;}
--dontwarn com.facebook.**
-
-#Admob 若没添加相关库，可不添加
--keep class com.google.android.gms.** {*;}
--dontwarn com.google.android.gms.**
-
-#VK 若没添加相关库，可不添加
--keep class com.mopub.** {*;}
--dontwarn com.mopub.**
-
-#AVAZU APPWALL 必须
+#AVAZU APPWALL
 -keep class nativesdk.ad.adsdk.** {*;}
 -dontwarn nativesdk.ad.adsdk.**
 -keep class nativesdk.ad.adsdkcore.** {*;}
 -dontwarn nativesdk.ad.adsdkcore.**
 
-#AVAZU NEWS 若没添加相关库，可不添加
+#FB, only add if you need FB ad
+-keep class com.facebook.** {*;}
+-dontwarn com.facebook.**
+
+#Admob, only add if you need Admob ad
+-keep class com.google.android.gms.** {*;}
+-dontwarn com.google.android.gms.**
+
+#VK, only add if you need VK ad
+-keep class com.mopub.** {*;}
+-dontwarn com.mopub.**
+
+#AVAZU NEWS, only add if you added Avazu news
 -keep class com.ad.adsdknews.** {*;}
 -dontwarn com.ad.adsdknews.**
+
 

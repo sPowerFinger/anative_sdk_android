@@ -16,7 +16,7 @@ android {
     compileSdkVersion 22
     buildToolsVersion '25.0.0'
     defaultConfig {
-        applicationId "mobi.yellow.battery"
+        applicationId "avazu.appwall.demo"
         minSdkVersion 9
         targetSdkVersion 22
         versionCode Integer.parseInt("${project.SDK_VERSION_CODE}${releaseTime()}")
@@ -41,10 +41,12 @@ repositories {
     flatDir {
         dirs 'libs'
     }
-    maven {
-        //stable release
-        url 'http://192.168.40.252:9090/repository/dotc-common/'
-    }
+
+    //maven: only valid for Avazu private network
+//    maven {
+//        //stable release
+//        url 'http://192.168.40.252:9090/repository/dotc-common/'
+//    }
 }
 
 configurations.all {
@@ -55,25 +57,28 @@ configurations.all {
 
 
 dependencies {
-//    compile fileTree(include: ['*.jar'], dir: 'libs')     // FB广告(AudienceNetwork.jar)， 若不需要不加
-    // Admob广告, 若不需要不加
-//    compile 'com.google.android.gms:play-services-ads:8.1.0' // API level 9, 依赖support-v4-22.2.0
-    // VK广告, 若不需要不加
+//    compile fileTree(include: ['*.jar'], dir: 'libs')     // FB (AudienceNetwork.jar), only add if you need
+
+    // Admob, only add if you need
+//    compile 'com.google.android.gms:play-services-ads:8.1.0' // API level 9, reply on support-v4-22.2.0
+
+    // VK, only add if you need
 //    compile 'com.my.target:mytarget-sdk:4.5.10'
 
-    // 必须
     compile 'com.google.code.gson:gson:2.8.0'
+
+    // Avazu appwall
     compile(name: 'avazu_common', ext: 'aar')
     compile(name: 'avazu_appwall', ext: 'aar')
 
-    // AVAZU ADNEWS 若不需要不加
+    // AVAZU news
 //    compile(name: 'avazu_adnews', ext: 'aar')
 
-    //from maven
+    //from maven (only valid for Avazu private network)
 //    compile 'com.avazu.adsdk:avazu_common:+'
 //    compile 'com.avazu.adsdk:avazu_appwall:+'
 //    compile 'com.avazu.adsdk:avazu_adnews:+'
 
-    // Demo本身主题， 不需要加
+    // theme for the demo
     compile 'com.android.support:appcompat-v7:22.2.0'
 }
