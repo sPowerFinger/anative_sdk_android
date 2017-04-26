@@ -1,2 +1,3 @@
 # anative_sdk
-aNative SDK/doc/demo
+
+Support both Android Studio and Eclipse.
