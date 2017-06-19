@@ -30,22 +30,6 @@
             android:gravity="center"
             android:text="Market - Fragment" />
 
-        <Button
-            android:id="@+id/news"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:minWidth="200dp"
-            android:gravity="center"
-            android:text="News" />
-
-        <Button
-            android:id="@+id/news_fragment"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:minWidth="200dp"
-            android:gravity="center"
-            android:text="News - Fragment" />
-
     </LinearLayout>
 
 </RelativeLayout>

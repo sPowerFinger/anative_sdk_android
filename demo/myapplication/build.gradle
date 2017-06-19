@@ -13,11 +13,11 @@ android {
             storePassword 'luhongwu'
         }
     }
-    compileSdkVersion 22
+    compileSdkVersion 23
     buildToolsVersion '25.0.0'
     defaultConfig {
         applicationId "avazu.appwall.demo"
-        minSdkVersion 9
+        minSdkVersion 11
         targetSdkVersion 22
         versionCode Integer.parseInt("${project.SDK_VERSION_CODE}${releaseTime()}")
         versionName "${project.SDK_VERSION_NAME}.${releaseTime()}"
@@ -43,10 +43,10 @@ repositories {
     }
 
     //maven: only valid for Avazu private network
-//    maven {
-//        //stable release
-//        url 'http://192.168.40.252:9090/repository/dotc-common/'
-//    }
+    maven {
+        //stable release
+        url 'http://192.168.40.252:9090/repository/dotc-common/'
+    }
 }
 
 configurations.all {
@@ -57,27 +57,23 @@ configurations.all {
 
 
 dependencies {
-//    compile fileTree(include: ['*.jar'], dir: 'libs')     // FB (AudienceNetwork.jar), only add if you need
+//    compile fileTree(include: ['*.jar'], dir: 'libs')
 
     // Admob, only add if you need
-//    compile 'com.google.android.gms:play-services-ads:8.1.0' // API level 9, reply on support-v4-22.2.0
+    compile 'com.google.android.gms:play-services-ads:8.4.0' // API level 9, reply on support-v4-22.2.0
 
-    // VK, only add if you need
-//    compile 'com.my.target:mytarget-sdk:4.5.10'
+    // fb
+    compile 'com.facebook.android:audience-network-sdk:4.23.0' // API level 11
 
     compile 'com.google.code.gson:gson:2.8.0'
 
     // Avazu appwall
-    compile(name: 'avazu_common', ext: 'aar')
-    compile(name: 'avazu_appwall', ext: 'aar')
-
-    // AVAZU news
-//    compile(name: 'avazu_adnews', ext: 'aar')
+    compile(name: 'anative_common', ext: 'aar')
+    compile(name: 'anative_appwall', ext: 'aar')
 
     //from maven (only valid for Avazu private network)
-//    compile 'com.avazu.adsdk:avazu_common:+'
-//    compile 'com.avazu.adsdk:avazu_appwall:+'
-//    compile 'com.avazu.adsdk:avazu_adnews:+'
+//    compile 'com.avazu.adsdk:anative_common:+'
+//    compile 'com.avazu.adsdk:anative_appwall:+'
 
     // theme for the demo
     compile 'com.android.support:appcompat-v7:22.2.0'

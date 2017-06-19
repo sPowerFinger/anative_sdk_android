@@ -16,9 +16,6 @@ import nativesdk.ad.adsdk.app.Constants;
 
 public class MainActivity extends ActionBarActivity {
 
-    private final String MARKET_TEST_FB_ID = "1713507248906238_1787756514814644";
-    private final String MARKTE_TEST_ADMOB_ID = "ca-app-pub-6857009064962881/7734086652";
-    private final String MARKTE_TEST_VK_ID = "61035";
     private Map<String, Integer> marketStyle = new HashMap<>();
 
     @Override
@@ -36,48 +33,20 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        setMarketStyle();  // 若不设置，采取默认样式
+//        setMarketStyle();  // 若不设置，采取默认样式
 
         findViewById(R.id.market).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                AdSdk.enableFacebookAdInMarket(MainActivity.this, MARKET_TEST_FB_ID);   // FB, 不需要不设
-//                AdSdk.enableAdmobInMarket(MainActivity.this, MARKTE_TEST_ADMOB_ID);     // Admob，不需要不设
-//                AdSdk.enableVkInMarket(MainActivity.this, MARKTE_TEST_VK_ID);           // VK，不需要不设
                 AdSdk.showAppMarket(MainActivity.this);
             }
         });
         findViewById(R.id.market_fragmet).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                AdSdk.enableFacebookAdInMarket(MainActivity.this, MARKET_TEST_FB_ID);
-//                AdSdk.enableAdmobInMarket(MainActivity.this, MARKTE_TEST_ADMOB_ID);
                 AdSdk.setAppMarketFragmentMode(MainActivity.this, true);
                 Intent i = new Intent(MainActivity.this, ViewpagerActivity.class);
                 startActivity(i);
-            }
-        });
-
-        findViewById(R.id.news).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                AdSdk.enableFacebookIntertitialInNewsFeed(MainActivity.this,"1447264415577075_1488443168125866");
-                AdSdk.enableFacebookBannerInNewsFeed(MainActivity.this, "1447264415577075_1488443071459209");
-                AdSdk.enableFacebookNativeAdInNewsFeed(MainActivity.this, "1638954679682946_1718740125037734");
-                AdSdk.setNewsFeedFragmentMode(MainActivity.this, false);
-                AdSdk.enableApxNativeAdInNewsFeed(MainActivity.this,"18000");
-                AdSdk.showNewsFeed(MainActivity.this,false);
-            }
-        });
-        findViewById(R.id.news_fragment).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                AdSdk.enableFacebookIntertitialInNewsFeed(MainActivity.this, "1447264415577075_1488443168125866");
-                AdSdk.enableFacebookBannerInNewsFeed(MainActivity.this, "1447264415577075_1488443071459209");
-                AdSdk.enableFacebookNativeAdInNewsFeed(MainActivity.this, "1638954679682946_1718740125037734");
-                AdSdk.setNewsFeedFragmentMode(MainActivity.this, true);
-                AdSdk.enableApxNativeAdInNewsFeed(MainActivity.this, "18000");
-                AdSdk.showNewsFeed(MainActivity.this,false);
             }
         });
     }
@@ -112,9 +81,9 @@ public class MainActivity extends ActionBarActivity {
         marketStyle.put(Constants.MarketStyle.TABLE_TEXT_COLOR, R.color.gray);
         marketStyle.put(Constants.MarketStyle.DK_BUTTON_BACKGROUND_COLOR, R.color.white);
         marketStyle.put(Constants.MarketStyle.DK_BUTTON_TEXT_COLOR, R.color.gray);
-        marketStyle.put(Constants.MarketStyle.INSTALL_TEXT_BACKGROUND_DRAWABLE, R.drawable.apx_appwall_adress_button_type1);
+        marketStyle.put(Constants.MarketStyle.INSTALL_TEXT_BACKGROUND_DRAWABLE, R.drawable.anative_appwall_adress_button_type1);
         marketStyle.put(Constants.MarketStyle.INSTALL_TEXT_COLOR, R.color.gray);
-        marketStyle.put(Constants.MarketStyle.BACK_BUTTON_DRAWABLE, R.drawable.apx_appwall_adrss_ic_back);
+        marketStyle.put(Constants.MarketStyle.BACK_BUTTON_DRAWABLE, R.drawable.anative_appwall_adrss_ic_back);
         marketStyle.put(Constants.MarketStyle.WALL_STATUS_COLOR, 0);
         marketStyle.put(Constants.MarketStyle.WALL_NAVIGATION_COLOR, 0);
         marketStyle.put(Constants.MarketStyle.APPWALL_BACKGROUND_COLOR, 0);

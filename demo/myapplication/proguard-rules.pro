@@ -16,12 +16,6 @@
 #   public *;
 #}
 
-#AVAZU APPWALL
--keep class nativesdk.ad.adsdk.** {*;}
--dontwarn nativesdk.ad.adsdk.**
--keep class nativesdk.ad.adsdkcore.** {*;}
--dontwarn nativesdk.ad.adsdkcore.**
-
 #FB, only add if you need FB ad
 -keep class com.facebook.** {*;}
 -dontwarn com.facebook.**
@@ -29,13 +23,5 @@
 #Admob, only add if you need Admob ad
 -keep class com.google.android.gms.** {*;}
 -dontwarn com.google.android.gms.**
-
-#VK, only add if you need VK ad
--keep class com.mopub.** {*;}
--dontwarn com.mopub.**
-
-#AVAZU NEWS, only add if you added Avazu news
--keep class com.ad.adsdknews.** {*;}
--dontwarn com.ad.adsdknews.**
 
 
