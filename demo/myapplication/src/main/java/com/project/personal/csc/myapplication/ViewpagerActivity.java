@@ -4,7 +4,8 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 
-import nativesdk.ad.adsdk.modules.activityad.FeatureFragment;
+import nativesdk.ad.common.AdSdk;
+
 
 /**
  * Created by csc on 15/12/21.
@@ -17,7 +18,7 @@ public class ViewpagerActivity extends FragmentActivity {
         if (savedInstanceState != null) {
             return;
         }
-        Fragment fr = new FeatureFragment();
+        Fragment fr = AdSdk.getFeatureFragment(this);
         android.support.v4.app.FragmentManager fm = getSupportFragmentManager();
         android.support.v4.app.FragmentTransaction ft = fm.beginTransaction();
         ft.add(android.R.id.content, fr);

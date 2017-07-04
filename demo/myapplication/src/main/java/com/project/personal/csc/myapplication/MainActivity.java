@@ -10,8 +10,8 @@ import android.view.View;
 import java.util.HashMap;
 import java.util.Map;
 
-import nativesdk.ad.adsdk.AdSdk;
-import nativesdk.ad.adsdk.app.Constants;
+import nativesdk.ad.common.AdSdk;
+import nativesdk.ad.common.app.Constants;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -46,6 +46,13 @@ public class MainActivity extends ActionBarActivity {
             public void onClick(View view) {
                 AdSdk.setAppMarketFragmentMode(MainActivity.this, true);
                 Intent i = new Intent(MainActivity.this, ViewpagerActivity.class);
+                startActivity(i);
+            }
+        });
+        findViewById(R.id.nativeAd).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, NativeAdActivity.class);
                 startActivity(i);
             }
         });

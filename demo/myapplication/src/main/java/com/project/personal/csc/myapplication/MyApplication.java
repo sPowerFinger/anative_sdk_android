@@ -2,7 +2,8 @@ package com.project.personal.csc.myapplication;
 
 import android.app.Application;
 
-import nativesdk.ad.adsdk.AdSdk;
+import nativesdk.ad.common.AdSdk;
+
 
 /**
  * Created by hongwu on 3/10/17.
@@ -14,6 +15,6 @@ public class MyApplication extends Application {
     public void onCreate() {
         super.onCreate();
 
-        AdSdk.initialize(this, "27722");
+        AdSdk.initialize(this, "eic196h8765432b");
     }
 }

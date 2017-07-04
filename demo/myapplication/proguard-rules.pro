@@ -15,13 +15,3 @@
 #-keepclassmembers class fqcn.of.javascript.interface.for.webview {
 #   public *;
 #}
-
-#FB, only add if you need FB ad
--keep class com.facebook.** {*;}
--dontwarn com.facebook.**
-
-#Admob, only add if you need Admob ad
--keep class com.google.android.gms.** {*;}
--dontwarn com.google.android.gms.**
-
-

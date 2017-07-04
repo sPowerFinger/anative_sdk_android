@@ -30,6 +30,14 @@
             android:gravity="center"
             android:text="Market - Fragment" />
 
+        <Button
+            android:id="@+id/nativeAd"
+            android:text="native Ads"
+            android:minWidth="200dp"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:layout_width="wrap_content"/>
+
     </LinearLayout>
 
 </RelativeLayout>

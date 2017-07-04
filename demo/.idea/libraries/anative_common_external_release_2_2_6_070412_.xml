@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="anative_common-external-release-2.2.6.070412-">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.android/build-cache/94d401c05f29573015c5c8bd3e3296ba4261ea1f/output/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.android/build-cache/94d401c05f29573015c5c8bd3e3296ba4261ea1f/output/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
