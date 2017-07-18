@@ -60,16 +60,16 @@ configurations.all {
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     // Admob, only add if you need
-    compile 'com.google.android.gms:play-services-ads:8.4.0' // API level 9, reply on support-v4-22.2.0
-    // fb
-    compile 'com.facebook.android:audience-network-sdk:4.23.0' // API level 14
+//    compile 'com.google.android.gms:play-services-ads:7.8.0' // API level 9, reply on support-v4-22.2.0
+//     fb
+//    compile 'com.facebook.android:audience-network-sdk:4.8.0' // API level 14
     compile 'com.google.code.gson:gson:2.8.0'
 
 
     // Avazu sdk
-    compile(name: 'anative_common-external-release-2.2.6.070412', ext: 'aar')
-    compile(name: 'anative_appwall-external-release-2.2.6.070412', ext: 'aar')
-    compile(name: 'anative_native-external-release-2.2.6.070412', ext: 'aar')
+    compile(name: 'anative_common-external-release-2.2.6.071817', ext: 'aar')
+    compile(name: 'anative_appwall-external-release-2.2.6.071817', ext: 'aar')
+    compile(name: 'anative_native-external-release-2.2.6.071817', ext: 'aar')
 
     //from maven (only valid for Avazu private network)
 //    compile 'com.avazu.adsdk:anative_common:+'
