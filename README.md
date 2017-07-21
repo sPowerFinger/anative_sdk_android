@@ -1,3 +1,3 @@
 # anative_sdk
 
-Support both Android Studio and Eclipse.
+Only support Android Studio now, if you need for eclipse, please contact us!
