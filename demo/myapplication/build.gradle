@@ -67,9 +67,9 @@ dependencies {
 
 
     // Avazu sdk
-    compile(name: 'anative_common-avazu_internal-release-2.2.7.082219', ext: 'aar')
-    compile(name: 'anative_appwall-avazu_internal-release-2.2.7.082219', ext: 'aar')
-    compile(name: 'anative_native-avazu_internal-release-2.2.7.082219', ext: 'aar')
+    compile(name: 'anative_common-avazu_internal-release-2.2.7.082319', ext: 'aar')
+    compile(name: 'anative_appwall-avazu_internal-release-2.2.7.082319', ext: 'aar')
+    compile(name: 'anative_native-avazu_internal-release-2.2.7.082319', ext: 'aar')
 
     //from maven (only valid for Avazu private network)
 //    compile 'com.avazu.adsdk:anative_common:+'

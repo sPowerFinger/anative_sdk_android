@@ -3,16 +3,12 @@ package com.project.personal.csc.myapplication;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Color;
-import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -46,7 +42,6 @@ public class AdvancedNativeAdActivity extends Activity implements View.OnClickLi
     private static final String TAG = "AdvancedNativeAdActivity: ";
     private Context mContext;
     private static final String unitId = "9i825hh8hg543c1";  //线上环境
-    //    private static final String unitId = "6fg725c196fed2b"; //测试环境
     private Button load, show;
     private RelativeLayout progressbar;
     private IAdvancedNativeAd mAdvancedNativeAd;
@@ -73,7 +68,7 @@ public class AdvancedNativeAdActivity extends Activity implements View.OnClickLi
     private void initNative() {
         //For testing, please add YOUR OWN tset device to replace below id for fb or admob ad.
         List<String> fbids = new ArrayList<>();
-        fbids.add("61d3dc81b49ac916ac5fef89da8b5abd");
+        fbids.add("12aecd9687717842bcfa179a35f1cd99");
         AdSetting.addFbTestDevices(this, fbids);
         AdSetting.addAdmobTestDevice(this, "4E924B13B234A72ABE5732B7C7B54686");
 
@@ -130,28 +125,24 @@ public class AdvancedNativeAdActivity extends Activity implements View.OnClickLi
     private void inflateApxAdView(INativeAd ad) {
         dumpAd(ad);
 
-        View adView = LayoutInflater.from(mContext).inflate(R.layout.advanced_native_ad_layout, null);
-        ViewGroup.LayoutParams params = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        adView.setLayoutParams(params);
+        View adView = LayoutInflater.from(mContext).inflate(R.layout.advanced_native_ad_apx, null);
 
-        ApxMediaView nativeAdMedia = new ApxMediaView(this);
+        ApxMediaView nativeAdMedia = (ApxMediaView) adView.findViewById(R.id.anative_mediaview);
         nativeAdMedia.setNativeAd((AdInfo) ad.getAdObject());
         nativeAdMedia.setAutoPlay(true);
-        LinearLayout mediaViewContainer = (LinearLayout) adView.findViewById(R.id.anative_mediaview_container);
-        mediaViewContainer.addView(nativeAdMedia, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
-                ViewGroup.LayoutParams.WRAP_CONTENT));
 
         BasicLazyLoadImageView iconView = (BasicLazyLoadImageView) adView.findViewById(R.id.anative_ad_icon_image);
         iconView.requestDisplayURL(ad.getIconImageUrl());
+
         TextView titleView = (TextView) adView.findViewById(R.id.anative_ad_title);
         titleView.setText(ad.getTitle());
+
         TextView subtitleView = (TextView) adView.findViewById(R.id.anative_ad_subtitle_text);
         subtitleView.setText(ad.getBody());
+
         TextView ctaView = (TextView) adView.findViewById(R.id.anative_ad_cta_text);
-        GradientDrawable bg = (GradientDrawable) ctaView.getBackground();
-        bg.setColor(getResources().getColor(R.color.ad_calltoaction));
-        ctaView.setTextColor(Color.WHITE);
         ctaView.setText(ad.getCallToActionText());
+
         BasicLazyLoadImageView choiceIconImage = (BasicLazyLoadImageView) adView.findViewById(R.id.anative_ad_choices_image);
         choiceIconImage.setImageResource(R.drawable.apx_native_ad_choices);
 
@@ -163,110 +154,87 @@ public class AdvancedNativeAdActivity extends Activity implements View.OnClickLi
     private void inflateAdmobInstallAdView(INativeAd ad) {
         dumpAd(ad);
 
-        NativeAppInstallAdView installAdView = new NativeAppInstallAdView(mContext);
-        View adView = LayoutInflater.from(mContext).inflate(R.layout.advanced_native_ad_layout, installAdView, false);
-        BasicLazyLoadImageView imageView = new BasicLazyLoadImageView(this);
-        imageView.setScaleType(ImageView.ScaleType.FIT_XY);
-        imageView.setAdjustViewBounds(true);
-        imageView.requestDisplayURL(ad.getCoverImageUrl());
-        installAdView.setImageView(imageView);
+        NativeAppInstallAdView adView = (NativeAppInstallAdView) LayoutInflater.from(mContext).inflate(R.layout.advanced_native_ad_apx, null);
 
-        LinearLayout mediaViewContainer = (LinearLayout) adView.findViewById(R.id.anative_mediaview_container);
-        mediaViewContainer.addView(imageView, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+        BasicLazyLoadImageView imageView = (BasicLazyLoadImageView) adView.findViewById(R.id.anative_mediaview);
+        imageView.requestDisplayURL(ad.getCoverImageUrl());
 
         BasicLazyLoadImageView iconView = (BasicLazyLoadImageView) adView.findViewById(R.id.anative_ad_icon_image);
         iconView.requestDisplayURL(ad.getIconImageUrl());
-        installAdView.setIconView(iconView);
+        adView.setIconView(iconView);
 
         TextView titleView = (TextView) adView.findViewById(R.id.anative_ad_title);
         titleView.setText(ad.getTitle());
-        installAdView.setHeadlineView(titleView);
+        adView.setHeadlineView(titleView);
 
         TextView subtitleView = (TextView) adView.findViewById(R.id.anative_ad_subtitle_text);
         subtitleView.setText(ad.getBody());
-        installAdView.setBodyView(subtitleView);
+        adView.setBodyView(subtitleView);
 
         TextView ctaView = (TextView) adView.findViewById(R.id.anative_ad_cta_text);
-        GradientDrawable bg = (GradientDrawable) ctaView.getBackground();
-        bg.setColor(getResources().getColor(R.color.ad_calltoaction));
-        ctaView.setTextColor(Color.WHITE);
         ctaView.setText(ad.getCallToActionText());
-        installAdView.setCallToActionView(ctaView);
+        adView.setCallToActionView(ctaView);
 
-        FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(adView.getLayoutParams().width, adView.getLayoutParams().height);
-        installAdView.setLayoutParams(params);
-        installAdView.addView(adView);
-        installAdView.setNativeAd((NativeAd) ad.getAdObject());
+        adView.setNativeAd((NativeAd) ad.getAdObject());
 
         ad.registerViewForInteraction(mAdContainer);
         mAdContainer.removeAllViews();
-        mAdContainer.addView(installAdView);
+        mAdContainer.addView(adView);
     }
 
     private void inflateAdmobContentAdView(INativeAd ad) {
         dumpAd(ad);
 
-        NativeContentAdView contentAdView = new NativeContentAdView(mContext);
-        View adView = LayoutInflater.from(mContext).inflate(R.layout.advanced_native_ad_layout, contentAdView, false);
-        BasicLazyLoadImageView imageView = new BasicLazyLoadImageView(this);
-        imageView.setScaleType(ImageView.ScaleType.FIT_XY);
-        imageView.setAdjustViewBounds(true);
-        imageView.requestDisplayURL(ad.getCoverImageUrl());
-        contentAdView.setImageView(imageView);
+        NativeContentAdView adView = (NativeContentAdView) LayoutInflater.from(mContext).inflate(R.layout.advanced_native_ad_admob_content, null);
 
-        LinearLayout mediaViewContainer = (LinearLayout) adView.findViewById(R.id.anative_mediaview_container);
-        mediaViewContainer.addView(imageView, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+        BasicLazyLoadImageView imageView = (BasicLazyLoadImageView) adView.findViewById(R.id.anative_mediaview);
+        imageView.requestDisplayURL(ad.getCoverImageUrl());
+        adView.setImageView(imageView);
 
         BasicLazyLoadImageView iconView = (BasicLazyLoadImageView) adView.findViewById(R.id.anative_ad_icon_image);
         iconView.requestDisplayURL(ad.getIconImageUrl());
-        contentAdView.setLogoView(iconView);
+        adView.setLogoView(iconView);
 
         TextView titleView = (TextView) adView.findViewById(R.id.anative_ad_title);
         titleView.setText(ad.getTitle());
-        contentAdView.setHeadlineView(titleView);
+        adView.setHeadlineView(titleView);
 
         TextView subtitleView = (TextView) adView.findViewById(R.id.anative_ad_subtitle_text);
         subtitleView.setText(ad.getBody());
-        contentAdView.setBodyView(subtitleView);
+        adView.setBodyView(subtitleView);
 
         TextView ctaView = (TextView) adView.findViewById(R.id.anative_ad_cta_text);
-        GradientDrawable bg = (GradientDrawable) ctaView.getBackground();
-        bg.setColor(getResources().getColor(R.color.ad_calltoaction));
-        ctaView.setTextColor(Color.WHITE);
         ctaView.setText(ad.getCallToActionText());
-        contentAdView.setCallToActionView(ctaView);
+        adView.setCallToActionView(ctaView);
 
-        FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(adView.getLayoutParams().width, adView.getLayoutParams().height);
-        contentAdView.setLayoutParams(params);
-        contentAdView.addView(adView);
-        contentAdView.setNativeAd((NativeAd) ad.getAdObject());
+        adView.setNativeAd((NativeAd) ad.getAdObject());
 
         ad.registerViewForInteraction(mAdContainer);
         mAdContainer.removeAllViews();
-        mAdContainer.addView(contentAdView);
+        mAdContainer.addView(adView);
     }
 
     private void inflateFbNativeAdView(INativeAd ad) {
         dumpAd(ad);
 
-        View adView = LayoutInflater.from(mContext).inflate(R.layout.advanced_native_ad_layout, null);
-        ViewGroup.LayoutParams params = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        adView.setLayoutParams(params);
-        MediaView nativeAdMedia = new MediaView(this);
+        View adView = LayoutInflater.from(mContext).inflate(R.layout.advanced_native_ad_facebook, null);
+
+        MediaView nativeAdMedia = (MediaView) adView.findViewById(R.id.anative_mediaview);
         nativeAdMedia.setNativeAd((com.facebook.ads.NativeAd) ad.getAdObject());
-        LinearLayout mediaViewContainer = (LinearLayout) adView.findViewById(R.id.anative_mediaview_container);
-        mediaViewContainer.addView(nativeAdMedia, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+
         BasicLazyLoadImageView iconView = (BasicLazyLoadImageView) adView.findViewById(R.id.anative_ad_icon_image);
         iconView.requestDisplayURL(ad.getIconImageUrl());
+
         TextView titleView = (TextView) adView.findViewById(R.id.anative_ad_title);
         titleView.setText(ad.getTitle());
+
         TextView subtitleView = (TextView) adView.findViewById(R.id.anative_ad_subtitle_text);
         subtitleView.setText(ad.getBody());
+
         TextView ctaView = (TextView) adView.findViewById(R.id.anative_ad_cta_text);
-        GradientDrawable bg = (GradientDrawable) ctaView.getBackground();
-        bg.setColor(getResources().getColor(R.color.ad_calltoaction));
         ctaView.setTextColor(Color.WHITE);
         ctaView.setText(ad.getCallToActionText());
+
         if (ad.getPrivacyIconUrl() != null) {
             L.e("privacyurl: " + ad.getPrivacyIconUrl());
             BasicLazyLoadImageView choiceIconImage = (BasicLazyLoadImageView) adView.findViewById(R.id.anative_ad_choices_image);
