@@ -134,6 +134,7 @@ public class AdvancedNativeAdActivity extends Activity implements View.OnClickLi
         dumpAd(ad);
 
         View adView = LayoutInflater.from(mContext).inflate(R.layout.advanced_native_ad_apx, null);
+        View transitionView = LayoutInflater.from(mContext).inflate(R.layout.anative_native_ad_transition_view, null);
 
         ApxMediaView nativeAdMedia = (ApxMediaView) adView.findViewById(R.id.anative_mediaview);
         nativeAdMedia.setNativeAd((AdInfo) ad.getAdObject());
@@ -155,6 +156,7 @@ public class AdvancedNativeAdActivity extends Activity implements View.OnClickLi
         choiceIconImage.setImageResource(R.drawable.apx_native_ad_choices);
 
         ad.registerViewForInteraction(mAdContainer);
+        ad.registerTransitionViewForAdClick(transitionView);
         mAdContainer.removeAllViews();
         mAdContainer.addView(adView);
     }

@@ -2,10 +2,9 @@ package com.project.personal.csc.myapplication;
 
 import android.app.Activity;
 import android.content.SharedPreferences;
-import android.graphics.Color;
-import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -31,7 +30,7 @@ import nativesdk.ad.nt.NativeAdListener;
 
 public class NativeAdActivity extends Activity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
 
-    private static final String[] unitIds = {"742i27h8765432b", "igfa4hh8hgf43c1", "9i825hh8hg543c1", "0bcfgh7ihgfedcb", "bdfhh77i765ed2b"}; // 线上环境
+    private static final String[] unitIds = {"742i27h8765432b", "igfa4hh8hgf43c1", "9i825hh8hg543c1", "0bcfgh7ihgfedcb", "bdfhh77i765ed2b"}; // avazu 线上环境
     private INativeAd mNativeAd;
     private Button load, show;
     private Spinner mStyle;
@@ -39,6 +38,7 @@ public class NativeAdActivity extends Activity implements View.OnClickListener, 
     private ArrayAdapter<CharSequence> styleAdapter;
     private RelativeLayout rootview, pbContainer;
     private ProgressBar progressbar;
+    private View mAdTransitionView;
     private String[] styles = {"Small", "Medium", "Large-image", "Large-video", "Carousel"};
     private static final String TAG = "NativeAdActivity: ";
 
@@ -65,19 +65,18 @@ public class NativeAdActivity extends Activity implements View.OnClickListener, 
         rootview = (RelativeLayout) findViewById(R.id.native_rootview);
         pbContainer = (RelativeLayout) findViewById(R.id.native_pb_container);
         progressbar = (ProgressBar) findViewById(R.id.native_pb);
-        progressbar.getIndeterminateDrawable().setColorFilter(Color.GRAY, PorterDuff.Mode.SRC_IN);
         load = (Button) findViewById(R.id.load);
         load.setOnClickListener(this);
         show = (Button) findViewById(R.id.show);
         show.setOnClickListener(this);
         mNativeContainer = (FrameLayout) findViewById(R.id.native_container);
-        hideProgressbar();
+        mAdTransitionView = LayoutInflater.from(this).inflate(R.layout.anative_native_ad_transition_view, null);
     }
 
     private void initNative(int idx) {
         //For testing, please add your own test device to replace below id for fb or admob ad.
         List<String> fbids = new ArrayList<>();
-        fbids.add("c993a6d1ccc75af93221ad939170a8ee");
+        fbids.add("113623303bbdf7ac28bed949545c95d7");
         AdSetting.addFbTestDevices(this, fbids);
         AdSetting.addAdmobTestDevice(this, "4E924B13B234A72ABE5732B7C7B54686");
 
@@ -100,6 +99,8 @@ public class NativeAdActivity extends Activity implements View.OnClickListener, 
                 Toast.makeText(NativeAdActivity.this, "AD clicked!", Toast.LENGTH_SHORT).show();
             }
         });
+
+        mNativeAd.registerTransitionViewForAdClick(mAdTransitionView);
     }
 
     private void loadAd() {
@@ -147,12 +148,15 @@ public class NativeAdActivity extends Activity implements View.OnClickListener, 
     }
 
     private void showProgressbar() {
-        rootview.removeView(pbContainer);
-        rootview.addView(pbContainer);
+        if (!pbContainer.isShown()) {
+            pbContainer.setVisibility(View.VISIBLE);
+        }
     }
 
     private void hideProgressbar() {
-        rootview.removeView(pbContainer);
+        if (pbContainer.isShown()) {
+            pbContainer.setVisibility(View.INVISIBLE);
+        }
     }
 
     @Override
