@@ -31,6 +31,14 @@
             android:text="Market - Fragment" />
 
         <Button
+            android:id="@+id/rewardedVideo"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:minWidth="200dp"
+            android:gravity="center"
+            android:text="rewarded Video" />
+
+        <Button
             android:id="@+id/nativeAd"
             android:text="native Ads"
             android:minWidth="200dp"

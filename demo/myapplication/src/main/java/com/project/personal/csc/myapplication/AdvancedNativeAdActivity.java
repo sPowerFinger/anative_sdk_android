@@ -24,6 +24,7 @@ import java.util.List;
 import nativesdk.ad.common.adapter.IAdvancedNativeAd;
 import nativesdk.ad.common.adapter.INativeAd;
 import nativesdk.ad.common.adapter.INativeAdLoadListener;
+import nativesdk.ad.common.adapter.OnAdClickListener;
 import nativesdk.ad.common.app.Constants;
 import nativesdk.ad.common.common.utils.L;
 import nativesdk.ad.common.database.AdInfo;
@@ -41,7 +42,7 @@ public class AdvancedNativeAdActivity extends Activity implements View.OnClickLi
 
     private static final String TAG = "AdvancedNativeAdActivity: ";
     private Context mContext;
-    private static final String unitId = "9i825hh8hg543c1";  //线上环境
+    private static final String unitId = "9i825hh8hg543c1";  //avazu 线上环境
     private Button load, show;
     private RelativeLayout progressbar;
     private IAdvancedNativeAd mAdvancedNativeAd;
@@ -103,6 +104,13 @@ public class AdvancedNativeAdActivity extends Activity implements View.OnClickLi
                 INativeAd ad = mAds.get(0);
                 switch (ad.getAdType()) {
                     case Constants.NativeAdType.AD_SOURCE_APX:
+                        ad.setOnAdClickListener(new OnAdClickListener() {
+                            //IMPORTANT: can ONLY record click event from apx ad
+                            @Override
+                            public void onClick(INativeAd ad) {
+                                Toast.makeText(AdvancedNativeAdActivity.this, "AD clicked: " + ad.getPackageName(), Toast.LENGTH_SHORT).show();
+                            }
+                        });
                         inflateApxAdView(ad);
                         break;
                     case Constants.NativeAdType.AD_SOURCE_ADMOB_INSTALL:

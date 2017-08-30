@@ -31,7 +31,6 @@ import nativesdk.ad.nt.NativeAdListener;
 
 public class NativeAdActivity extends Activity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
 
-    //    private static final String[] unitIds = {"bgcj85c196fed2b", "0ejg752bjgfedc1", "6fg725c196fed2b", "ijc2ff2bjgf43c1", "9bgeg5c1965ed2b"}; // 测试环境
     private static final String[] unitIds = {"742i27h8765432b", "igfa4hh8hgf43c1", "9i825hh8hg543c1", "0bcfgh7ihgfedcb", "bdfhh77i765ed2b"}; // 线上环境
     private INativeAd mNativeAd;
     private Button load, show;
@@ -95,12 +94,12 @@ public class NativeAdActivity extends Activity implements View.OnClickListener, 
                 hideProgressbar();
                 Toast.makeText(NativeAdActivity.this, "Load error!", Toast.LENGTH_SHORT).show();
             }
-        });
-    }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
+            @Override
+            public void onClicked() { //IMPORTANT: can ONLY record click event from apx ad
+                Toast.makeText(NativeAdActivity.this, "AD clicked!", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     private void loadAd() {
@@ -154,5 +153,11 @@ public class NativeAdActivity extends Activity implements View.OnClickListener, 
 
     private void hideProgressbar() {
         rootview.removeView(pbContainer);
+    }
+
+    @Override
+    protected void onDestroy() {
+        mNativeAd.destroy();
+        super.onDestroy();
     }
 }

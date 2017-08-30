@@ -12,6 +12,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
+            android:screenOrientation="portrait"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -26,9 +27,12 @@
             android:screenOrientation="portrait"/>
 
         <activity android:name=".NativeAdActivity"
-                  android:configChanges="orientation"/>
+                  android:screenOrientation="portrait"/>
 
         <activity android:name=".AdvancedNativeAdActivity"
+                  android:screenOrientation="portrait"/>
+
+        <activity android:name=".RewardVideoActivity"
                   android:screenOrientation="portrait"/>
 
         <!--admob-->
@@ -39,6 +43,48 @@
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
+
+        <!--fb-->
+        <activity
+            android:name="com.facebook.ads.InterstitialAdActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:excludeFromRecents="true"
+            android:exported="true"
+            android:noHistory="true"/>
+
+        <!--adcolony-->
+        <activity
+            android:name="com.adcolony.sdk.AdColonyInterstitialActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:hardwareAccelerated="true"/>
+        <activity
+            android:name="com.adcolony.sdk.AdColonyAdViewActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:hardwareAccelerated="true"/>
+
+
+        <!--vungle-->
+        <activity
+            android:name="com.vungle.publisher.VideoFullScreenAdActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
+        <activity
+            android:name="com.vungle.publisher.MraidFullScreenAdActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
+        <activity
+            android:name="com.vungle.publisher.FlexViewAdActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
+
+
+        <!-- AppLovin: It is VERY IMPORTANT you add the orientation and screenSize config flags if using Version 6.4.0 and above -->
+        <activity
+            android:name="com.applovin.adview.AppLovinInterstitialActivity"
+            android:configChanges="orientation|screenSize"/>
+        <activity
+            android:name="com.applovin.adview.AppLovinConfirmationActivity"
+            android:configChanges="orientation|screenSize"/>
 
     </application>
 

@@ -40,7 +40,7 @@
     <favorites_list name="demo" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="GenerateSignedApkSettings">
     <option name="KEY_STORE_PATH" value="$PROJECT_DIR$/key.jks" />
@@ -110,6 +110,11 @@
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="prepareDebugDependencies" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Prepare com.adcolony:sdk:3.1.2" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="prepareComAdcolonySdk312Library" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
@@ -297,11 +302,6 @@
                 <option name="name" value="javaPreCompileDebugAndroidTest" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Prepare :anative_common-avazu_internal-release-2.2.7.082319:" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
-                <option name="name" value="prepareAnative_commonAvazu_internalRelease227082319Library" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
                 <option name="description" value="Uninstalls the Release build." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="uninstallRelease" />
@@ -407,11 +407,6 @@
                 <option name="description" value="Displays a help message." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="help" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Prepare :anative_appwall-avazu_internal-release-2.2.7.082319:" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
-                <option name="name" value="prepareAnative_appwallAvazu_internalRelease227082319Library" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
@@ -561,6 +556,11 @@
                 <option name="name" value="assembleDebugAndroidTest" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
+                <option name="description" value="Prepare :unity-ads:" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="prepareUnityAdsLibrary" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="processDebugJavaRes" />
               </ExternalTaskPojo>
@@ -611,6 +611,11 @@
                 <option name="name" value="preReleaseUnitTestBuild" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
+                <option name="description" value="Prepare :anative_native-avazu_internal-release-2.2.7.083010:" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="prepareAnative_nativeAvazu_internalRelease227083010Library" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="generateDebugResValues" />
               </ExternalTaskPojo>
@@ -622,6 +627,11 @@
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="javaPreCompileDebug" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Prepare :anative_reward-avazu_internal-release-2.2.7.083010:" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="prepareAnative_rewardAvazu_internalRelease227083010Library" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Run unit tests for the debug build." />
@@ -690,6 +700,11 @@
                 <option name="name" value="buildDependents" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
+                <option name="description" value="Prepare :anative_appwall-avazu_internal-release-2.2.7.083010:" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="prepareAnative_appwallAvazu_internalRelease227083010Library" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="generateDebugAssets" />
               </ExternalTaskPojo>
@@ -697,11 +712,6 @@
                 <option name="description" value="Displays the dependent components of components in root project 'demo_avazu'. [incubating]" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="dependentComponents" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Prepare :anative_native-avazu_internal-release-2.2.7.082319:" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
-                <option name="name" value="prepareAnative_nativeAvazu_internalRelease227082319Library" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Displays all buildscript dependencies declared in root project 'demo_avazu'." />
@@ -786,6 +796,11 @@
                 <option name="name" value="generateDebugBuildConfig" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
+                <option name="description" value="Prepare :anative_common-avazu_internal-release-2.2.7.083010:" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="prepareAnative_commonAvazu_internalRelease227083010Library" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
                 <option name="description" value="Prepare com.facebook.android:audience-network-sdk:4.23.0" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="prepareComFacebookAndroidAudienceNetworkSdk4230Library" />
@@ -856,6 +871,11 @@
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/myapplication" />
                 <option name="name" value="prepareDebugDependencies" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Prepare com.adcolony:sdk:3.1.2" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/myapplication" />
+                <option name="name" value="prepareComAdcolonySdk312Library" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/myapplication" />
@@ -1038,11 +1058,6 @@
                 <option name="name" value="javaPreCompileDebugAndroidTest" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Prepare :anative_common-avazu_internal-release-2.2.7.082319:" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/myapplication" />
-                <option name="name" value="prepareAnative_commonAvazu_internalRelease227082319Library" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
                 <option name="description" value="Uninstalls the Release build." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/myapplication" />
                 <option name="name" value="uninstallRelease" />
@@ -1148,11 +1163,6 @@
                 <option name="description" value="Displays a help message." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/myapplication" />
                 <option name="name" value="help" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Prepare :anative_appwall-avazu_internal-release-2.2.7.082319:" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/myapplication" />
-                <option name="name" value="prepareAnative_appwallAvazu_internalRelease227082319Library" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/myapplication" />
@@ -1297,6 +1307,11 @@
                 <option name="name" value="assembleDebugAndroidTest" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
+                <option name="description" value="Prepare :unity-ads:" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/myapplication" />
+                <option name="name" value="prepareUnityAdsLibrary" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/myapplication" />
                 <option name="name" value="processDebugJavaRes" />
               </ExternalTaskPojo>
@@ -1347,6 +1362,11 @@
                 <option name="name" value="preReleaseUnitTestBuild" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
+                <option name="description" value="Prepare :anative_native-avazu_internal-release-2.2.7.083010:" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/myapplication" />
+                <option name="name" value="prepareAnative_nativeAvazu_internalRelease227083010Library" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/myapplication" />
                 <option name="name" value="generateDebugResValues" />
               </ExternalTaskPojo>
@@ -1358,6 +1378,11 @@
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/myapplication" />
                 <option name="name" value="javaPreCompileDebug" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Prepare :anative_reward-avazu_internal-release-2.2.7.083010:" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/myapplication" />
+                <option name="name" value="prepareAnative_rewardAvazu_internalRelease227083010Library" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Run unit tests for the debug build." />
@@ -1426,6 +1451,11 @@
                 <option name="name" value="buildDependents" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
+                <option name="description" value="Prepare :anative_appwall-avazu_internal-release-2.2.7.083010:" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/myapplication" />
+                <option name="name" value="prepareAnative_appwallAvazu_internalRelease227083010Library" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/myapplication" />
                 <option name="name" value="generateDebugAssets" />
               </ExternalTaskPojo>
@@ -1433,11 +1463,6 @@
                 <option name="description" value="Displays the dependent components of components in project ':myapplication'. [incubating]" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/myapplication" />
                 <option name="name" value="dependentComponents" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Prepare :anative_native-avazu_internal-release-2.2.7.082319:" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/myapplication" />
-                <option name="name" value="prepareAnative_nativeAvazu_internalRelease227082319Library" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Displays all buildscript dependencies declared in project ':myapplication'." />
@@ -1522,6 +1547,11 @@
                 <option name="name" value="generateDebugBuildConfig" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
+                <option name="description" value="Prepare :anative_common-avazu_internal-release-2.2.7.083010:" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/myapplication" />
+                <option name="name" value="prepareAnative_commonAvazu_internalRelease227083010Library" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
                 <option name="description" value="Prepare com.facebook.android:audience-network-sdk:4.23.0" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/myapplication" />
                 <option name="name" value="prepareComFacebookAndroidAudienceNetworkSdk4230Library" />
@@ -1573,7 +1603,7 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="4490587493926" />
+        <entry key="$PROJECT_DIR$" value="4491161702049" />
         <entry key="$PROJECT_DIR$/../../avazu_adsdk" value="10356158514917" />
         <entry key="$PROJECT_DIR$/../../parallel_space/parallel_box" value="5887675657756" />
         <entry key="$PROJECT_DIR$/../../parallel_space/parallel_box_v1.0" value="4421268536964" />
@@ -1935,25 +1965,26 @@
         <option value="$PROJECT_DIR$/myapplication/proguard-rules.pro" />
         <option value="$PROJECT_DIR$/myapplication/build/intermediates/manifests/full/debug/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/myapplication/src/main/java/com/project/personal/csc/myapplication/ViewpagerActivity.java" />
-        <option value="$PROJECT_DIR$/myapplication/src/main/res/layout/activity_main.xml" />
         <option value="$PROJECT_DIR$/myapplication/src/main/res/values/colors.xml" />
         <option value="$PROJECT_DIR$/myapplication/src/main/res/values/dimens.xml" />
         <option value="$PROJECT_DIR$/myapplication/src/main/res/layout/advanced_native.xml" />
-        <option value="$PROJECT_DIR$/myapplication/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/myapplication/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/myapplication/src/main/java/com/project/personal/csc/myapplication/MyApplication.java" />
-        <option value="$PROJECT_DIR$/myapplication/src/main/java/com/project/personal/csc/myapplication/MainActivity.java" />
-        <option value="$PROJECT_DIR$/myapplication/src/main/java/com/project/personal/csc/myapplication/NativeAdActivity.java" />
         <option value="$PROJECT_DIR$/myapplication/src/main/java/com/project/personal/csc/myapplication/AdvancedNativeAdActivity.java" />
+        <option value="$PROJECT_DIR$/myapplication/src/main/java/com/project/personal/csc/myapplication/NativeAdActivity.java" />
+        <option value="$PROJECT_DIR$/myapplication/src/main/java/com/project/personal/csc/myapplication/MainActivity.java" />
+        <option value="$PROJECT_DIR$/myapplication/src/main/res/layout/activity_main.xml" />
         <option value="$PROJECT_DIR$/myapplication/build.gradle" />
+        <option value="$PROJECT_DIR$/myapplication/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/myapplication/src/main/java/com/project/personal/csc/myapplication/RewardVideoActivity.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="65" />
-    <option name="y" value="-4" />
+    <option name="y" value="24" />
     <option name="width" value="1855" />
-    <option name="height" value="1084" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -1980,18 +2011,16 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="AndroidView">
-        <subPane />
-      </pane>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="demo_avazu" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -2020,6 +2049,12 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="AndroidView">
+        <subPane />
+      </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2028,7 +2063,7 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="android.project.structure.last.selected" value="Project" />
     <property name="android.project.structure.proportion" value="0.15" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../demo_nativedynamics" />
     <property name="device.picker.selection" value="0933f2dc021f6731" />
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;jar:///home/hongwu/.android/build-cache/4ef67a0c6b4a1be973e56165605f48b40a968f0a/output/jars/classes.jar!/nativesdk/ad/common/receiver/NetworkSwitchReceiver.class&#10;adsdk&#9;FILE&#9;jar:///home/hongwu/.android/build-cache/e76d356a4bf67bf363493e5200872e332a21228e/output/jars/classes.jar!/nativesdk/ad/common/AdSdk.class&#10;pack&#9;FILE&#9;jar:///home/hongwu/.android/build-cache/e1cc57994c65f1236ad1db77f4b4fe36f8a4b096/output/jars/classes.jar!/nativesdk/ad/adsdkcore/receiver/PackageAddedReceiver.class&#10;base&#9;FILE&#9;jar:///home/hongwu/.android/build-cache/f9f152c356de9ca9d9da09aec432ea9f2e86cd2e/output/jars/classes.jar!/nativesdk/ad/adsdkcore/fragments/BaseAppWallFragment.class&#10;Main&#9;FILE&#9;file:///home/hongwu/Work/Projects/AVAZU_AD_SDK/demo/myapplication/src/main/java/com/project/personal/csc/myapplication/MainActivity.java&#10;baseapp&#9;FILE&#9;jar:///home/hongwu/.android/build-cache/262ced433b60d747a53d01f2ecbc84d0e891298e/output/jars/classes.jar!/nativesdk/ad/adsdkcore/fragments/BaseAppWallFragment.class&#10;AdJump&#9;PSI&#9;JAVA://nativesdk.ad.adsdk.modules.activityad.adclick.AdJumpHelper&#10;FeatureFra&#9;PSI&#9;JAVA://nativesdk.ad.adsdkcore.fragments.FeatureFragment&#10;Marketlo&#9;PSI&#9;JAVA://nativesdk.ad.adsdkcore.loader.MarketLoader&#10;Marketlog&#9;null&#9;null&#10;Adlist&#9;PSI&#9;JAVA://nativesdk.ad.adsdk.task.AdListLoadTask&#10;indicat&#9;PSI&#9;JAVA://nativesdk.ad.adsdkcore.widget.IndicatorView" />
     <property name="ScreenshotViewer.SavePath" value="$USER_HOME$/Desktop" />
@@ -2051,9 +2086,9 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/myapplication/libs" />
       <recent name="$PROJECT_DIR$/myapplication/src/main/res/layout" />
+      <recent name="$PROJECT_DIR$/myapplication/src/main/java/com/project/personal/csc/myapplication" />
       <recent name="$PROJECT_DIR$/myapplication/src/main/res/drawable" />
       <recent name="$PROJECT_DIR$/myapplication/src/main/res/values" />
-      <recent name="$PROJECT_DIR$/myapplication/lib" />
     </key>
   </component>
   <component name="RunManager" selected="Android App.myapplication">
@@ -2608,11 +2643,32 @@
       <option name="project" value="LOCAL" />
       <updated>1503487207349</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="update demo">
+      <created>1504006928846</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1504006928846</updated>
+    </task>
+    <task id="LOCAL-00028" summary="update demo">
+      <created>1504061626975</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1504061626975</updated>
+    </task>
+    <task id="LOCAL-00029" summary="change reward id">
+      <created>1504065978886</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1504065978886</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
+    <frame x="65" y="24" width="1855" height="1056" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -2621,15 +2677,15 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.7655914" sideWeight="0.5041459" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.8397849" sideWeight="0.49585405" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.92688173" sideWeight="0.49585405" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5172043" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5817204" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2642344" sideWeight="0.46129033" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2697623" sideWeight="0.46129033" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2498618" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -2672,40 +2728,16 @@
     <MESSAGE value="release 2.2.5.042617" />
     <MESSAGE value="release 2.2.5.061911" />
     <MESSAGE value="release 2.2.6.062219" />
-    <MESSAGE value="update demo" />
     <MESSAGE value="init avazu demo" />
-    <option name="LAST_COMMIT_MESSAGE" value="init avazu demo" />
+    <MESSAGE value="update demo" />
+    <MESSAGE value="change reward id" />
+    <option name="LAST_COMMIT_MESSAGE" value="change reward id" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/.android/build-cache/c3ac5ac5ea23dd70950738fbe8d6b0c956a0b73b/output/res/layout/anative_header_native_ad.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="7" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="7" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myapplication/myapplication.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myapplication/build/outputs/apk/myapplication-debug.apk" />
-    <entry file="jar://$USER_HOME$/.android/build-cache/264b41330090241ee142a02b2b22232cef60d3ca/output/jars/classes.jar!/nativesdk/ad/adsdk/analytics/AnalyticsMgr.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/myapplication/src/main/res/drawable/anative_appwall_adress_button_type1.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -2797,13 +2829,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/myapplication/build/intermediates/manifests/full/debug/AndroidManifest.xml" />
-    <entry file="file://$PROJECT_DIR$/myapplication/proguard-rules.pro">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Desktop/0724/CMBrowser-v52110-2102110665-gp-10000000-master.apk" />
     <entry file="file://$PROJECT_DIR$/myapplication/myapplication-release.apk" />
     <entry file="file://$PROJECT_DIR$/myapplication/src/main/java/com/project/personal/csc/myapplication/ViewpagerActivity.java">
@@ -2811,16 +2836,6 @@
         <state relative-caret-position="360">
           <caret line="20" column="44" selection-start-line="20" selection-start-column="44" selection-end-line="20" selection-end-column="44" />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myapplication/src/main/res/layout/activity_main.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="536">
-          <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/myapplication/src/main/res/values/colors.xml">
@@ -2861,17 +2876,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/myapplication/src/main/AndroidManifest.xml">
-      <provider editor-type-id="android-manifest">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="39" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/myapplication/src/main/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
@@ -2900,27 +2904,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/myapplication/src/main/res/layout/advanced_native_ad_layout.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/myapplication/src/main/res/layout/advanced_native_ad_layout.xml" />
     <entry file="file://$PROJECT_DIR$/myapplication/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myapplication/src/main/java/com/project/personal/csc/myapplication/NativeAdActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-432">
-          <caret line="33" column="154" selection-start-line="33" selection-start-column="154" selection-end-line="33" selection-end-column="154" />
         </state>
       </provider>
     </entry>
@@ -2950,35 +2938,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/myapplication/libs/anative_appwall-avazu_internal-release-2.2.7.082319.aar">
-      <provider selected="true" editor-type-id="apk-viewer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myapplication/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="738">
-          <caret line="41" column="13" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myapplication/src/main/java/com/project/personal/csc/myapplication/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="54" column="5" selection-start-line="54" selection-start-column="5" selection-end-line="54" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myapplication/src/main/java/com/project/personal/csc/myapplication/AdvancedNativeAdActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2763">
-          <caret line="251" column="0" selection-start-line="251" selection-start-column="0" selection-end-line="251" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/myapplication/libs/anative_appwall-avazu_internal-release-2.2.7.082319.aar" />
     <entry file="file://$PROJECT_DIR$/myapplication/src/main/res/layout/advanced_native_ad_admob_content.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-324">
@@ -2988,6 +2948,108 @@
       </provider>
       <provider editor-type-id="android-designer2">
         <state />
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.android/build-cache/07fadaf89cea39f4138ddb7f36678c6fae816ac3/output/jars/classes.jar!/nativesdk/ad/nt/mediation/adapter/apx/ApxMediaView.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="101" column="67" selection-start-line="101" selection-start-column="67" selection-end-line="101" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myapplication/src/main/java/com/project/personal/csc/myapplication/NativeAdActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="40" column="35" selection-start-line="40" selection-start-column="35" selection-end-line="40" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myapplication/src/main/java/com/project/personal/csc/myapplication/AdvancedNativeAdActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="49" column="35" selection-start-line="49" selection-start-column="35" selection-end-line="49" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Android/Sdk/sources/android-23/android/app/Activity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="516">
+          <caret line="1647" column="19" selection-start-line="1647" selection-start-column="19" selection-end-line="1647" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myapplication/src/main/res/layout/reward_video.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myapplication/src/main/res/layout/activity_main.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myapplication/src/main/java/com/project/personal/csc/myapplication/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+          <folding>
+            <element signature="e#1300#1535#0" expanded="true" />
+            <element signature="e#1534#1535#0" expanded="true" />
+            <marker date="1504060995434" expanded="true" signature="1538:2133" ph="//..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myapplication/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1440">
+          <caret line="80" column="123" selection-start-line="80" selection-start-column="123" selection-end-line="80" selection-end-column="123" />
+          <folding>
+            <element signature="e#584#602#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+      <provider editor-type-id="android-manifest">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myapplication/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1440">
+          <caret line="80" column="32" selection-start-line="80" selection-start-column="32" selection-end-line="80" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myapplication/proguard-rules.pro">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myapplication/src/main/java/com/project/personal/csc/myapplication/RewardVideoActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="26" column="57" selection-start-line="26" selection-start-column="42" selection-end-line="26" selection-end-column="57" />
+          <folding />
+        </state>
       </provider>
     </entry>
   </component>

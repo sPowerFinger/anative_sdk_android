@@ -38,6 +38,13 @@ public class MainActivity extends ActionBarActivity {
                 startActivity(i);
             }
         });
+        findViewById(R.id.rewardedVideo).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, RewardVideoActivity.class);
+                startActivity(i);
+            }
+        });
         findViewById(R.id.nativeAd).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

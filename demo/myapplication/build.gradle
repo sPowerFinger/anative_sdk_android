@@ -48,6 +48,9 @@ repositories {
         //stable release
         url 'http://192.168.40.252:9090/repository/dotc-common/'
     }
+    maven {
+        url "https://adcolony.bintray.com/AdColony"
+    }
 }
 
 configurations.all {
@@ -64,12 +67,18 @@ dependencies {
     //fb
     compile 'com.facebook.android:audience-network-sdk:4.23.0'
     compile 'com.google.code.gson:gson:2.8.0'
-
+    //adcolony
+    compile 'com.adcolony:sdk:3.1.2'   // Virus: Android/Generic.Z.49FCB8!tr
+    // unity
+    compile(name: 'unity-ads', ext: 'aar')
+    //applovin (applovin-sdk-6.4.2.jar)
+    //vungle (dagger-2.7.jar, javax.inject-1.jar, publisher-sdk-android-5.1.0.jar, rxjava-1.2.0.jar, eventbus-2.2.1.jar)
 
     // Avazu sdk
-    compile(name: 'anative_common-avazu_internal-release-2.2.7.082319', ext: 'aar')
-    compile(name: 'anative_appwall-avazu_internal-release-2.2.7.082319', ext: 'aar')
-    compile(name: 'anative_native-avazu_internal-release-2.2.7.082319', ext: 'aar')
+    compile(name: 'anative_common-avazu_internal-release-2.2.7.083010', ext: 'aar')
+    compile(name: 'anative_appwall-avazu_internal-release-2.2.7.083010', ext: 'aar')
+    compile(name: 'anative_native-avazu_internal-release-2.2.7.083010', ext: 'aar')
+    compile(name: 'anative_reward-avazu_internal-release-2.2.7.083010', ext: 'aar')
 
     //from maven (only valid for Avazu private network)
 //    compile 'com.avazu.adsdk:anative_common:+'
