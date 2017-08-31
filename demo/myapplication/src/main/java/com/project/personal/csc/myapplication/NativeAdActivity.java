@@ -99,8 +99,6 @@ public class NativeAdActivity extends Activity implements View.OnClickListener, 
                 Toast.makeText(NativeAdActivity.this, "AD clicked!", Toast.LENGTH_SHORT).show();
             }
         });
-
-        mNativeAd.registerTransitionViewForAdClick(mAdTransitionView);
     }
 
     private void loadAd() {
