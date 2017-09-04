@@ -42,12 +42,6 @@ repositories {
     flatDir {
         dirs 'libs'
     }
-
-    //maven: only valid for Avazu private network
-    maven {
-        //stable release
-        url 'http://192.168.40.252:9090/repository/dotc-common/'
-    }
     maven {
         url "https://adcolony.bintray.com/AdColony"
     }
@@ -75,15 +69,10 @@ dependencies {
     //vungle (dagger-2.7.jar, javax.inject-1.jar, publisher-sdk-android-5.1.0.jar, rxjava-1.2.0.jar, eventbus-2.2.1.jar)
 
     // Avazu sdk
-    compile(name: 'anative_common-avazu_internal-release-2.2.7.083016', ext: 'aar')
-    compile(name: 'anative_appwall-avazu_internal-release-2.2.7.083016', ext: 'aar')
-    compile(name: 'anative_native-avazu_internal-release-2.2.7.083016', ext: 'aar')
-    compile(name: 'anative_reward-avazu_internal-release-2.2.7.083016', ext: 'aar')
-
-    //from maven (only valid for Avazu private network)
-//    compile 'com.avazu.adsdk:anative_common:+'
-//    compile 'com.avazu.adsdk:anative_appwall:+'
-//    compile 'com.avazu.adsdk:anative_native:+'
+    compile(name: 'anative_common-2.2.7.090414', ext: 'aar')
+    compile(name: 'anative_appwall-2.2.7.090414', ext: 'aar')
+    compile(name: 'anative_native-2.2.7.090414', ext: 'aar')
+    compile(name: 'anative_reward-2.2.7.090414', ext: 'aar')
 
     // theme for the demo
     compile 'com.android.support:appcompat-v7:23.0.0'

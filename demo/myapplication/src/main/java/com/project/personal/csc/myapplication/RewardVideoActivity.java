@@ -9,10 +9,6 @@ import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import nativesdk.ad.nt.AdSetting;
 import nativesdk.ad.rw.IRewardedVideoAd;
 import nativesdk.ad.rw.RewardedVideoAd;
 import nativesdk.ad.rw.RewardedVideoAdListener;
@@ -29,6 +25,8 @@ public class RewardVideoActivity extends Activity implements View.OnClickListene
     private Button load, show;
     private static final String TAG = "RewardVideoActivity: ";
     private RelativeLayout progressbar;
+    private boolean mIsInited = false;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -41,19 +39,30 @@ public class RewardVideoActivity extends Activity implements View.OnClickListene
         show = (Button) findViewById(R.id.show);
         show.setOnClickListener(this);
 
+        load.setEnabled(false);
+        show.setEnabled(false);
+
         initReward();
     }
 
     private void initReward() {
-        //For testing, please add your own test device to replace below id for fb ad.
-        List<String> fbids = new ArrayList<>();
-        fbids.add("50eb6facca6cedfb643187c8a46bd7f3");
-        AdSetting.addFbTestDevices(this, fbids);
-
-        rewardedVideoAd = new RewardedVideoAd(this, unitId);
-        rewardedVideoAd.setRewardedVideoAdListener(new RewardedVideoAdListener() {
+        rewardedVideoAd = new RewardedVideoAd(this, unitId, new RewardedVideoAdListener() {
             @Override
-            public void onRewardedVideoAdLoaded() {
+            public void onInitSuccess() { // load ad after init success
+                Toast.makeText(RewardVideoActivity.this, "init success! please load", Toast.LENGTH_SHORT).show();
+                mIsInited = true;
+                load.setEnabled(true);
+                show.setEnabled(true);
+            }
+
+            @Override
+            public void onInitFailed() {
+                Toast.makeText(RewardVideoActivity.this, "init failed!", Toast.LENGTH_SHORT).show();
+                mIsInited = false;
+            }
+
+            @Override
+            public void onRewardedVideoAdLoaded() { // show ad after ad loaded
                 Log.e(TAG, "onRewardedVideoAdLoaded");
                 hideProgressbar();
                 Toast.makeText(RewardVideoActivity.this, "onRewardedVideoAdLoaded", Toast.LENGTH_SHORT).show();
@@ -112,8 +121,10 @@ public class RewardVideoActivity extends Activity implements View.OnClickListene
     }
 
     private void loadAd() {
-        showProgressbar();
-        rewardedVideoAd.loadAd();
+        if (mIsInited) {
+            showProgressbar();
+            rewardedVideoAd.loadAd();
+        }
     }
 
     private void show() {
