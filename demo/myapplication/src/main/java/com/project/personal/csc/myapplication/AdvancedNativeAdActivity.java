@@ -159,8 +159,6 @@ public class AdvancedNativeAdActivity extends Activity implements View.OnClickLi
         ad.registerTransitionViewForAdClick(transitionView);
         mAdContainer.removeAllViews();
         mAdContainer.addView(adView);
-
-	ad.reportImpression(); // report ad impression to sdk
     }
 
     private void inflateAdmobInstallAdView(INativeAd ad) {
