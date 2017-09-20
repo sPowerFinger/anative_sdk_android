@@ -95,7 +95,7 @@ public class NativeAdActivity extends Activity implements View.OnClickListener, 
             }
 
             @Override
-            public void onClicked() { //IMPORTANT: can ONLY record click event from apx ad
+            public void onClicked() { //IMPORTANT: NOW we can ONLY record click event from apx ad
                 Toast.makeText(NativeAdActivity.this, "AD clicked!", Toast.LENGTH_SHORT).show();
             }
         });

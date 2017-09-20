@@ -69,10 +69,10 @@ dependencies {
     //vungle (dagger-2.7.jar, javax.inject-1.jar, publisher-sdk-android-5.1.0.jar, rxjava-1.2.0.jar, eventbus-2.2.1.jar)
 
     // Avazu sdk
-    compile(name: 'anative_common-2.2.7.090414', ext: 'aar')
-    compile(name: 'anative_appwall-2.2.7.090414', ext: 'aar')
-    compile(name: 'anative_native-2.2.7.090414', ext: 'aar')
-    compile(name: 'anative_reward-2.2.7.090414', ext: 'aar')
+    compile(name: 'anative_common-2.2.7.092011', ext: 'aar')
+    compile(name: 'anative_appwall-2.2.7.092011', ext: 'aar')
+    compile(name: 'anative_native-2.2.7.092011', ext: 'aar')
+    compile(name: 'anative_reward-2.2.7.092011', ext: 'aar')
 
     // theme for the demo
     compile 'com.android.support:appcompat-v7:23.0.0'
